@@ -90,9 +90,7 @@ Sends a piece of the firmware in the payload.
 ### Update Process
 The sequence of frames for a complete update is listed in the figure below. It is mandatory that before  sending 64 bytes of data, the status is read and informs no errors.
 
-```
-![](images/firmwareUpdateFlow.svg)
-```
+![Some Text](images/firmwareUpdateFlow.png)
 
 
 ### Data Integrity
@@ -118,6 +116,7 @@ During bootloader operation, it can inform some errors. To read these errors, us
 The firmware can be updated in a total of 8 seconds.
 
 I would like to thank the owners of the following repos:
+
 [HairBoot from Zepan](https://github.com/Zepan/hairBoot)
 
 [Lujji's Bootloader](https://github.com/lujji/stm8-bootloader)
