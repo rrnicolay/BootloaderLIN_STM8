@@ -2,14 +2,15 @@
 # BootloaderLIN_STM8
 
 A bootloader over LIN for STM8S003F3.
+
 Tools: IAR 3.11.1
 
 ### Usage
-1.  Generate a .hex of the bootloader (remember to use the provided .icf).
-2.  Point the interruptions to app (need to modify bootloader binary file). For that, use the instructions in genBootloader folder.
-3.  Flash bootloader to stm8s: use STVP and ST-LINK
+1.  Generate a .hex of the bootloader (remember to use the provided linker file).
+2.  Point the interruptions to the app (need to modify bootloader binary file). For that, use the instructions in genBootloader folder.
+3.  Flash bootloader to stm8s: use STVP and ST-LINK.
 4.  Build an app and remember to place it in the correct flash section.
-5.  Send the firmware respecting the frames and timing rules described in this file. I will not provide the updater because I used a very specific LIN/USB converter which provided a Python API to transmit LIN frames.
+5.  Send the firmware respecting the frames and timing rules described in this file.
 
 ### Introduction
 The bootloader will answer to frames sent to IDs 0x30 (to send data to bootloader) and 0x31 (to request data from bootloader).
@@ -90,8 +91,9 @@ Sends a piece of the firmware in the payload.
 The sequence of frames for a complete update is listed in the figure below. It is mandatory that before  sending 64 bytes of data, the status is read and informs no errors.
 
 ```
-![Alt text](images/firmwareUpdateFlow.svg?raw=true "Firmware Update Flow")
+![](images/firmwareUpdateFlow.svg)
 ```
+
 
 ### Data Integrity
 
@@ -117,5 +119,7 @@ The firmware can be updated in a total of 8 seconds.
 
 I would like to thank the owners of the following repos:
 [HairBoot from Zepan](https://github.com/Zepan/hairBoot)
+
 [Lujji's Bootloader](https://github.com/lujji/stm8-bootloader)
+
 [Ethan's Bootloader](https://github.com/ccyinlu/stm8l-bootloader)
