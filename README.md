@@ -6,7 +6,7 @@ A bootloader over LIN for STM8S003F3.
 Tools: IAR 3.11.1
 
 ### Usage
-1.  Generate a .hex of the bootloader (remember to use the provided linker file).
+1.  Generate a .bin of the bootloader (remember to use the provided linker file).
 2.  Point the interruptions to the app (need to modify bootloader binary file). For that, use the instructions in genBootloader folder.
 3.  Flash bootloader to stm8s: use STVP and ST-LINK.
 4.  Build an app and remember to place it in the correct flash section.

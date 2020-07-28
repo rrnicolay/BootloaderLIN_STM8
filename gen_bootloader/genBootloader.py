@@ -19,13 +19,13 @@ def printIVT(ivt):
 
 
 if __name__ == "__main__":
-  parser = argparse.ArgumentParser(description='Overhead Bootloader Generator')
+  parser = argparse.ArgumentParser(description='Bootloader Generator')
   parser.add_argument('file', help='firmware in binary format (.bin)')
   args = parser.parse_args()
   FILE = args.file
   data = open(FILE, 'r+b')
   curDate = "%02d%02d%04d" % (date.today().day, date.today().month, date.today().year)
-  outputName = "bootloaderOverhead_" + curDate
+  outputName = "bootloader_" + curDate
 
   with data as f:
     # Read entire IVT
